@@ -12,17 +12,14 @@
   Written by Kevin Townsend for Adafruit Industries.  
   BSD license, all text above must be included in any redistribution
  ***************************************************************************/
-#if ARDUINO >= 100
- #include "Arduino.h"
-#else
- #include "WProgram.h"
-#endif
-
-#include <Wire.h>
+#include "Particle.h"
 
 #include <limits.h>
 
-#include "Adafruit_LSM303_U.h"
+#include "Adafruit_10DOF_IMU/Adafruit_LSM303_U.h"
+
+// This is an ugly hack because that's the test used to use Write.write instead of Wire.send everywhere
+#define ARDUINO 100
 
 /* enabling this #define will enable the debug print blocks
 #define LSM303_DEBUG
